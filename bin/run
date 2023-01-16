@@ -101,7 +101,7 @@ for bp in ${@}; do
     suite_start_time="$(date +%s)"
 
     echo "  TEST SUITE: $(basename ${f})"
-    ${SHUNIT_HOME?"'SHUNIT_HOME' environment variable must be set"}/src/shunit2 ${f} | indent
+    ${SHUNIT_HOME?"'SHUNIT_HOME' environment variable must be set"}/shunit2 ${f} | indent
     exit_code=$(max ${exit_code} ${PIPESTATUS[0]})
 
     suite_end_time="$(date +%s)"
